@@ -2,7 +2,7 @@ pipeline {
     agent any
  
     tools {
-        maven 'Maven3'
+        maven 'Maven_3'
     }
  
     stages {
@@ -14,27 +14,37 @@ pipeline {
             }
         }
  
+ 
+ 
         stage('Build') {
             steps {
-                bat 'mvn clean'
+                dir('CucumberBBD') {
+                    bat 'mvn clean'
+                }
             }
         }
  
         stage('Compile') {
             steps {
-                bat 'mvn compile'
+                dir('CucumberBBD') {
+                    bat 'mvn compile'
+                }
             }
         }
  
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('CucumberBBD') {
+                    bat 'mvn test'
+                }
             }
         }
  
         stage('Package') {
             steps {
-                bat 'mvn package'
+                dir('CucumberBBD') {
+                    bat 'mvn package'
+                }
             }
         }
     }
