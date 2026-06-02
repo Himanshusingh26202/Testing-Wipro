@@ -64,13 +64,7 @@ stage('Docker Run') {
     }
     }
 }
-  stage('Build Docker Image') {
-            steps {
-				 dir('CucumberBBD') {
-                bat 'docker build -t cucumber-project .'
-            }
-        }
-       }
+  
  
     }
  
