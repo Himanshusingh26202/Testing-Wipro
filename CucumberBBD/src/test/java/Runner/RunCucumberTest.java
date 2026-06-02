@@ -14,8 +14,8 @@ tags= "@Smoke",
 plugin = {
 "pretty",
 "html:target/htmlreports/report2.html",
-"json:target/jsonreports/report1.jason",
-"junit:target/junitreports/report1.junit"
+"json:target/jsonreports/report1.json",
+"junit:target/junitreports/report1.xml"
 }
 )
 
