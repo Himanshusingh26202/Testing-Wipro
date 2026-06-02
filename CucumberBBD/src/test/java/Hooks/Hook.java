@@ -12,17 +12,14 @@ public class Hook {
 
     public void setup() {
 
-    	ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
 
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
-        options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
-
-        driver.manage().window().maximize();
 
         driver.manage().timeouts()
               .implicitlyWait(Duration.ofSeconds(10));
@@ -31,13 +28,8 @@ public class Hook {
     }
 
     public void closes() {
-
         if(driver != null) {
-
             driver.quit();
-
-            System.out.println(
-            "Browser session closed successfully.");
         }
     }
 }
