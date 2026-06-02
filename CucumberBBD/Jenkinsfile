@@ -64,10 +64,24 @@ stage('Docker Run') {
     }
     }
 }
+  stage('Build Docker Image') {
+            steps {
+				 dir('CucumberBBD') {
+                bat 'docker build -t cucumber-project .'
+            }
+        }
+       }
  
     }
  
     post {
+		  always {
+            junit allowEmptyResults: true,
+                  testResults: 'CucumberBDD/target/junitreports/*.xml'
+
+            archiveArtifacts artifacts: 'CucumberBDD/target/*/.*',
+                             fingerprint: true
+        }
         success {
             echo 'Build Successful'
         }
