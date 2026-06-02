@@ -29,4 +29,4 @@ Then user should be redirected to the checkout page
 Examples:
 | email                    | password      | status  | product     |
 | himanshu2608@gmail.com   | Himanshu123   | success | iphone      |
-| himanshu2608@gmail.com   | Himanshu123   | success | macbook     |
+
